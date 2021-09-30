@@ -76,17 +76,22 @@
     width: 100%;
   }
   
-  #signin .secondary-btn,.links,.or {
+  #signin .secondary-btn {
     width: 80%;
   }
   
-  #signin .links a {
-    display: block;
-    color: #015174;
-    margin-bottom: 1rem;
+  #links {
     text-align: center;
-    font-size: 0.9rem;
-  }
+    display: flex;
+    flex-direction: column;
+}
+
+#links a{
+    display: block;
+    text-decoration: none;
+    color: deepskyblue;
+    margin: 10px;
+}
   
   #signin .bar {
     flex: auto;
