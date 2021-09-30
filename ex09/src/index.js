@@ -31,25 +31,34 @@ var users = [
     }
 ];
 
-function getUsers() {
-    var output = "";
-    for (i = 0; i < users.length; i++) {
-        users[i] = `${users[i].id}` + " - " + `${users[i].firstName}` + " " + `${users[i].lastName}` + " is " + `${users[i].age}` + ", " + `${users[i].gender}\n`;
-        output += users[i];
+//
+//
+
+const getUsers = () => {
+    var output ='';
+    for (let i=0; i<users.length; i++) {
+        output += `${users[i].id} - ${users[i].firstName} ${users[i].lastName} is ${users[i].age}, ${users[i].gender}\n`;
     }
     return output;
 }
- function findUserById(id) {
-     try {
-        var user = _.find(users, { id: id });
-        var iFindUser = `${user.id}` + " - " + `${user.firstName}` + " " + `${user.lastName}` + " is " + `${user.age}` + ", " + `${user.gender}`;
+
+//
+//
+
+const findUserById = (id) => {
+    try {
+        var user = _.find(users, { id : id });
+        var iFindUser = `${user.id} - ${user.firstName} ${user.lastName} is ${user.age}, ${user.gender}`;
         return iFindUser;
-     } catch (error) {
-         return "Cannot read property 'id'";
-     }
- }
+    } catch(error) {
+        console.log("Cannot read property 'id'");
+        return "Cannot read property 'id'";
+    }
+}
+ //
+    //
 
  getUsers();
- console.log(findUserById(3));
+ console.log(findUserById(3)); //
 
  module.exports = findUserById;
